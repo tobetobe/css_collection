@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="myDiv" style="width:3em">test</div>
+    <script>
+      window.onload = function() {
+        var div = document.getElementById("myDiv");
+        setTimeout(function() {
+          console.log(div.style.marginLeft);
+          if (div.style.marginLeft == "") {
+            div.style.marginLeft = 0;
+          }
+          marginLeft = parseInt(div.style.marginLeft) + 5;
+          div.style.marginLeft = marginLeft + "px";
+
+          if (marginLeft < 200) {
+            setTimeout(arguments.callee, 50);
+          }
+        }, 50);
+      };
+    </script>
+  </body>
+</html>

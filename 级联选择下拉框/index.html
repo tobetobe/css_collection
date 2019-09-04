@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>级联选择下拉框</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: blueviolet;
+      }
+
+      dt {
+        background-color: brown;
+      }
+      .car_select {
+        display: none;
+        width: 10em;
+      }
+      .car_select_left {
+        display: flex;
+        flex-direction: column;
+        background-color: azure;
+        width: 3em;
+        position: absolute;
+        height: 4em;
+        overflow: auto;
+      }
+      .car_select_right {
+        margin: 3em;
+        height: 4em;
+        overflow: auto;
+        background-color: antiquewhite;
+      }
+      .car_name:hover,
+      .car_name:active,
+      .car_name:focus {
+        color: aliceblue;
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div onclick="handleClick()">
+      select
+    </div>
+    <div class="car_select">
+      <ul class="car_select_left">
+        <li class="car_name">
+          A
+        </li>
+
+        <li class="car_name">
+          B
+        </li>
+
+        <li class="car_name">
+          C
+        </li>
+
+        <li class="car_name">
+          D
+        </li>
+      </ul>
+      <div class="car_select_right">
+        <dl>
+          <dt class="list_item">A</dt>
+          <dd class="list_item">AA</dd>
+          <dd class="list_item">AAA</dd>
+          <dd class="list_item">AAAA</dd>
+        </dl>
+        <dl>
+          <dt class="list_item">B</dt>
+          <dd class="list_item">BB</dd>
+          <dd class="list_item">BBB</dd>
+          <dd class="list_item">BBBB</dd>
+        </dl>
+        <dl>
+          <dt class="list_item">C</dt>
+          <dd class="list_item">CC</dd>
+        </dl>
+        <dl>
+          <dt class="list_item">D</dt>
+          <dd class="list_item">DD</dd>
+        </dl>
+      </div>
+    </div>
+
+    <script>
+      function handleClick() {
+        console.log(`Clicked!`);
+        document.getElementsByClassName(
+          `car_select`
+        )[0].style.display = `block`;
+      }
+      const li = document.getElementsByTagName(`li`);
+      //   console.log(li)
+      for (let i = 0; i < li.length; i++) {
+        li[i].onclick = function() {
+          console.log(li[i].innerHTML);
+          const name = li[i].innerHTML;
+          let num = 0;
+          for (num; num < list_item.length; num++) {
+            console.log(list_item[num].innerHTML,name);
+            if (list_item[num].innerHTML == name.trim()) {
+              console.log(num);
+              break;
+            }
+          }
+          document
+            .getElementsByClassName(`car_select_right`)[0]
+            .scrollTo(0, 22 * num);
+        };
+      }
+      const list_item = document.getElementsByClassName("list_item");
+    //   console.log(list_item);
+    </script>
+  </body>
+</html>

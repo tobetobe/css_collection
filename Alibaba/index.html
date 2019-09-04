@@ -1,0 +1,65 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      body {
+        width: 100%;
+        height: 1000px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #content {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 50% auto;
+        border: 1px solid #ccc;
+        display: none;
+      }
+      @keyframes move {
+        from {
+          top: 100%;
+        }
+        to {
+          top: 50%;
+        }
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="show()">Click Me!</button>
+    <div id="content">
+      Hello World !
+    </div>
+    <script>
+      function show() {
+        const content = document.getElementById("content");
+        // console.log(content.style);
+        content.style.display = "block";
+        content.style.zIndex = 100;
+        content.style.animation = "move 1s";
+      }
+      //   function an() {
+      //     setTimeout(function() {
+      //       console.log("start");
+      //       if (content.style.top == "") {
+      //         content.style.top = 0 + "%";
+      //       }
+      //       console.log(content.style.top);
+      //       top = parseInt(top) + 1;
+      //       //   console.log(top);
+      //       content.style.top = top + "%";
+      //       if (top < 50) {
+      //         setTimeout(arguments.callee, 50);
+      //       }
+      //     }, 50);
+      //   }
+    </script>
+  </body>
+</html>

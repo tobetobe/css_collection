@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .header {
+        background: #3b5cc8 !important;
+      }
+      body {
+        background: antiquewhite;
+      }
+
+      .center_1620 {
+        display: flex;
+        width: 115.7em; /* 1620px */
+        margin: auto;
+      }
+
+      ul {
+        width: 800px;
+        /* float: right; */
+        display: flex;
+        flex-direction: row;
+      }
+
+      li {
+        margin: 0;
+        padding: 0 3em 0;
+        list-style: none;
+      }
+      .menu_item {
+        width: 6em;
+        height: 2em;
+        margin-left: 3em;
+        text-align: center;
+        text-decoration: none;
+      }
+      a:hover {
+        background: blue;
+      }
+
+      .menu_item :hover {
+        background: red;
+        /* background-image: url(../../images/menu_hover.png) !important; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu_item">
+      test
+    </div>
+    <a to="/" class="menu_item">首页</a>
+
+    <a to="/dataquery">Dataquery</a>
+
+    <a to="/datamanage">Datamanage</a>
+    <a to="/basicinfo">basicinfo</a>
+    <a to="/login">login</a>
+  </body>
+</html>

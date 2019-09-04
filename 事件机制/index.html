@@ -1,0 +1,58 @@
+<!-- <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="father">
+      <div class="son">div 1</div>
+      <div class="son">div 2</div>
+    </div>
+
+    <script>
+      const father = document.getElementById("father");
+      const handler = e => {
+        console.log(e);
+      };
+      const div3 = document.createElement("div");
+      div3.setAttribute("class", "son");
+      div3.innerHTML = "div 3";
+      father.appendChild(div3);
+      father.addEventListener("click", e => handler(e), true);
+    </script>
+  </body>
+</html> -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="father">
+      <div id="son">222</div>
+    </div>
+    <script>
+      window.onload = function() {
+        let father = document.getElementById("father"),
+          son = document.getElementById("son");
+
+        let handleEvent = e => {
+          console.log(e.target);
+        };
+
+        son.addEventListener("click", function(){
+          console.log("son")
+        }, true);
+
+        father.addEventListener("click", function(){
+          console.log("father")
+        }, false);
+      };
+    </script>
+  </body>
+</html>
+<!-- 事件委托 -->
