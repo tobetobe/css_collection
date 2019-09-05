@@ -1,0 +1,57 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="76515344_p0_master1200.jpg" />
+    <a id="aaa">
+      <h2>
+        download
+      </h2>
+    </a>
+  </body>
+  <script>
+    function funDownload(url, name) {
+      let img = new Image();
+      let canvas = document.createElement("canvas");
+      let ctx = canvas.getContext("2d");
+
+      img.setAttribute("crossOrigin", "anonymous");
+      img.src = url;
+
+      base64 = "";
+      img.onload = function() {
+        let w = img.width,
+          h = img.height;
+        canvas.width = w;
+        canvas.height = h;
+        console.log("canvas", canvas);
+
+        ctx.drawImage(img, 0, 0);
+
+        const base64 = canvas.toDataURL();
+        console.log(base64);
+        let a = document.createElement("a");
+        let event = new MouseEvent("click");
+        a.download = name || "photo";
+        a.href = base64;
+        a.dispatchEvent(event);
+      };
+    }
+
+    function get64(canvas) {
+      return new Promise(resolve => {
+        resolve(base64);
+      });
+    }
+
+    document.getElementById("aaa").onclick = () =>
+      funDownload(
+        "http://cdn.aidigger.com/images/se/5926c3fd-92c3-4608-8cfe-8ae3df559e6a.jpg",
+        "bbb"
+      );
+  </script>
+</html>
