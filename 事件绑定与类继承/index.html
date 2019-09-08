@@ -1,0 +1,32 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Eventbinding and Class</title>
+  </head>
+  <body>
+    <button id="click">click</button>
+    <script>
+      class Base {
+        a = 1;
+        constructor() {
+          document
+            .querySelector("#click")
+            .addEventListener("click", this.handleClick);
+        }
+        handleClick = () => {
+          console.log("click", this.a);
+        };
+      }
+      class Derived extends Base {
+        handleClick() {
+          super.handleClick();
+          console.log("click2", this.a); // not run
+        }
+      }
+      new Derived();
+    </script>
+  </body>
+</html>
+<!-- https://github.com/yinxin630/blog/issues/17 -->
