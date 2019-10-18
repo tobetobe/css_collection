@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HOVER</title>
+    <style>
+      .hoverOne {
+        width: 200px;
+        height: 30px;
+        background-color: blue;
+        align-items: center;
+      }
+      .hoverOne:hover {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hoverOne" id="hoverBtn">HOVER HERE</div>
+
+    <script>
+      window.onload = function() {
+        console.info(`READY to GO`);
+        let hoverBtn = document.getElementById("hoverBtn");
+        hoverBtn.addEventListener("mouseover", () => console.log(`hover!`));
+        hoverBtn.addEventListener("click", () => console.log(`click!`));
+      };
+    </script>
+  </body>
+</html>
